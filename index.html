@@ -1,322 +1,609 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ooops, I guess we're full-stack developers now.</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ooops, I guess we're full-stack developers now.</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+  <body>
+    <div class="callout">
+      Sorry I missed JAMstack_conf London 2019 🤕. Here's my talk here instead.
+    </div>
 
-<body>
+    <main>
+      <header class="talk-header">
+        <h1>
+          oooooops I guess we’re* full-stack developers&nbsp;now
+        </h1>
+        <p>*by "we're" i mean front-end developers</p>
+      </header>
 
-  <div class="callout">
-    Sorry I missed JAMstack_conf London 2019 🤕. Here's my talk here instead.
-  </div>
+      <div class="by">
+        A talk by Chris Coyier //
+        <a href="https://chriscoyier.net">chriscoyier.net</a>
+      </div>
 
-  <main>
+      <details class="video-toggle">
+        <div class="video">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/VwjXUGFQjYg"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <summary>
+          View a YouTube video of the talk I recorded in my booth.
+        </summary>
+      </details>
 
-    <header class="talk-header">
-      <h1>
-         oooooops I guess we’re* full-stack developers&nbsp;now
-      </h1>
-      <p>*by "we're" i mean front-end developers</p>
-    </header>
-  
-    <div class="by">
-      A talk by Chris Coyier
-      //  
-      <a href="https://chriscoyier.net">chriscoyier.net</a>
-    </div>
-  
-    <details class="video-toggle">
-      <div class="video">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/VwjXUGFQjYg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-      <summary>
-        View a YouTube video of the talk I recorded in my booth.
-      </summary>
-    </details>
-    
-    <div class="slide-whole">
-      <h2>👋 I’ve spent my whole career self-identifying as a <strong>front-end developer</strong> and trying to help others become better at it.</h2>
-      <p>
-        and boy is it blowing up
-      </p>
-    </div>
-  
-    <div class="slide-halfs">
-      <div>
-        <img src="slides/Oops.003.jpeg" alt="Screenshots of CSS-Tricks and CodePen homepages">
-      </div>
-      <div>
+      <div class="slide-whole">
+        <h2>
+          👋 I’ve spent my whole career self-identifying as a
+          <strong>front-end developer</strong> and trying to help others become
+          better at it.
+        </h2>
         <p>
-          I run the site <a href="https://css-tricks.com">CSS-Tricks</a> (which recently had its 12th birthday), a resource site all about building websites.
-        </p>
-        <p>
-          I co-founded the site <a href="https://codepen.io">CodePen</a>, a social coding platform all about building things with front-end technology.
+          and boy is it blowing up
         </p>
       </div>
-    </div>
-  
-    <div class="slide-halfs">
-      <div>
-        <img src="slides/Oops.004.jpeg" alt="">
-      </div>
-      <div>
-        <p>
-          I also co-host a podcast called <a href="https://shoptalkshow.com">ShopTalk Show</a> which is going on 400 episodes. 
-        </p>
-        <p>
-          I'm sure I've talked to thousands of other developers over the years, which has helped me understand the industry and the spectrum of work it takes to make websites happen.
-        </p>
-      </div>
-    </div>
-  
-    <div class="slide-halfs">
-      <div>
-        <h2>What is a front-end developer?</h2>
-      </div>
-      <div>
-        <ul class="check-list">
-          <li>It's a job and a common job title.</li>
-        </ul>
-        <p>This is important because it's not just semantics. It's a job that people are hired to do, and it is their job title at work. Nothing more personal than money.</p>
-        <p>How we define what this job is and what the expectations are is personal.</p>
-        <p>Look at any job board that has technology jobs on it and you'll see postings for <strong>front-end developers</strong>.</p>
-      </div>
-    </div>
-  
-    <div class="slide-halfs">
-      <div>
-        <h2>What is a front-end developer?</h2>
-      </div>
-      <div>
-        <ul class="check-list">
-          <li class="fade">It's a job and a common job title.</li>
-          <li>It deals very directly with the browser, devices, and users.</li>
-        </ul>
-        <p>Everybody that works on websites probably has their browser open all day, but front-end developers <em>live</em> in there. They have DevTools open. They have multiple browsers open and test across versions and platforms.</p>
-        <p>Crucially, they care about the users that interact with those browsers and assistive technology.</p>
-      </div>
-    </div>
-  
-    <div class="slide-halfs">
-      <div>
-        <img src="slides/Oops.008.jpeg" alt="">
-      </div>
-      <div>
-        <p>Mina Markham explains what a front-end developers is at a high level:</p>
-        <audio src="audio/mina.mp3" controls></audio>
-      </div>
-    </div>
-  
-    <div class="slide-halfs">
-      <div>
-        <img src="slides/Oops.009.jpeg" alt="">
-      </div>
-      <div>
-        <p>There is a distinction from back-end developers. Its not that back-end developers don't care about users, it's just that responsibility is delegated.</p>
-        <p>Monica Dinculescu puts it well:</p>
-        <audio src="audio/monica.mp3" controls></audio>
-      </div>
-    </div>
-  
-    <div class="slide-halfs">
-      <div>
-        <img src="slides/Oops.010.jpeg" alt="">
-      </div>
-      <div>
-        <p>
-          The browser is at the heart of the job of front-end development. Whatever you are doing, if your concern is how things ultimately look and work in a browser, that's front-end development.
-        </p>
-      </div>
-    </div>
-  
-    <div class="slide-halfs">
-      <div>
-        <img src="slides/Oops.011.jpeg" alt="">
-      </div>
-      <div>
-        <p>
-          It's harder than it gets credit for.
-        </p>
-      </div>
-    </div>
-  
-    <div class="slide-halfs">
-      <div>
-        <h2>What is a front-end developer?</h2>
-      </div>
-      <div>
-        <ul class="check-list">
-          <li class="fade">It's a job and a common job title.</li>
-          <li class="fade">It deals very directly with the browser, devices, and users.</li>
-          <li>There are loads of tools involved, but ultimately it comes down to HTML, CSS, and JavaScript.</li>
-        </ul>
-        <p>Those are the languages that browsers speak. Yes yes, there is SVG and PNG and whatever else also, but you know what I mean.</p>
-        <p>Whatever other tooling you use, it all comes down to what ships to the browser, and front-end developers are responsible for that.</p>
-      </div>
-    </div>
-  
-    <div class="slide-halfs">
-      <div>
-        <img src="slides/Oops.013.jpeg" alt="">
-      </div>
-      <div>
-        <p>
-          HTML, CSS, and JavaScript. They are gonna come up at work.
-        </p>
-        <p>
-          As a twist though, not all front-end developers know all the languages equally well. In fact, there are lots of developers out there who hardly write any JavaScript at all, but who are otherwise very successful front-end developers. And there are certainly a lot of front-end developers who write almost nothing <em>but</em> JavaScript.
-        </p>
-      </div>
-    </div>
-  
-    <div class="slide-halfs">
-      <div>
-        <img src="slides/Oops.014.jpeg" alt="">
-      </div>
-      <div>
-        <p>
-          My article <a href="https://css-tricks.com/the-great-divide/">The Great Divide</a> digs into the split between front-end developers who are deeply into JavaScript and those who are not.
-        </p>
-        <p>
-          It's not just my thoughts, but a collection of quotes from many others who feel the divide.
-        </p>
-      </div>
-    </div>
-  
-    <div class="slide-halfs">
-      <div>
-        <img src="slides/Oops.015.jpeg" alt="">
-      </div>
-      <div>
-        <audio src="audio/monica.mp3" controls></audio>
-        <p>
-          Brad Frost coins the terms "Front of the Front" and "Back of the Front" as a way to describe another sort of divide. He points out that it's not a weakness, but a strength in putting those different people together.
-        </p>
-      </div>
-    </div>
-  
-    <div class="slide-halfs">
-      <div>
-        <blockquote class="twitter-tweet"><p lang="en" dir="ltr">At Google we have Front End Software Engineers and UX Engineers to attempt to address these differences. The two career ladders are very different with different expectations and different criteria for advancement.</p>&mdash; Steve Paulo (@StevePaulo) <a href="https://twitter.com/StevePaulo/status/1087428564553613312?ref_src=twsrc%5Etfw">January 21, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-      </div>
-      <div>
-        <p>At Google, the divide is recognized and split by job title. Plus, those two career ladders <a href="https://twitter.com/StevePaulo/status/1087476505087664128">get paid the same</a>.</p>
-      </div>
-    </div>
-  
-    <div class="slide-whole">
-      <img src="slides/Oops.017.jpeg" alt="">
-    </div>
-  
-    <div class="slide-halfs">
-      <div>
-        <img src="slides/Oops.018.jpeg" alt="">
-      </div>
-      <div>
-        <p>
-          There is no doubt about it. Particularly since about 2015, JavaScript has exploded as a language.
-        </p>
-      </div>
-    </div>
-  
-    <div class="slide-triples">
-      <div><img src="slides/Oops.019.jpeg" alt=""></div>
-      <div><img src="slides/Oops.020.jpeg" alt=""></div>
-      <div><img src="slides/Oops.021.jpeg" alt=""></div>
-    </div>
-  
-    <div class="slide-halfs">
-      <div>
-        <img src="slides/Oops.022.jpeg" alt="">
-      </div>
-      <div>
-        <p>
-          Our jobs are already facinating! So we all deal with browsers and users and devices. That's core. But we all know different stuff, and actually put that knowledge to work. 
-        </p>
-        <p>
-          Some of us are designers. Some of us are photographers. Some of us know the law really well. Some of us are way into performance. Some of us specialize in accessibility. Some of us embrace social media. 
-        </p>
-        <p>
-          Metaphorically, you could map us like this tree.
-        </p>
-      </div>
-    </div>
-  
-    <div class="slide-halfs">
-      <div>
-        <img src="slides/Oops.023.jpeg" alt="">
-      </div>
-      <div>
-        <p>
-          This metaphor probably doesn't hold up quite perfectly, but the divide looks a little something like this. We still share some fundamentals, and we still branch out and know lots of different stuff, but one side is heavily focused on JavaScript and "Back of the Front" type work and the other is not.
-        </p>
-      </div>
-    </div>
-  
-    <div class="slide-halfs">
-      <div>
-        <img src="slides/Oops.024.jpeg" alt="">
-      </div>
-      <div>
-        <p>
-          Since this talk is about the slow morphing of front-end developers starting to do more full-stack work and having that role grow wider and wider, let's just assume we're talking about front-end developers who go down the heavier JavaScript road.
-        </p>
-      </div>
-    </div>
-  
-    <div class="slide-halfs">
-      <div>
-        <h2>A bunch of stuff you need to do to build websites has sort of <strong>moved stacks</strong>.</h2>
-        <p>Back End → JavaScript</p>
-      </div>
-      <div>
-        <p>
-          That is, from more of a back-end-and-friends skillset to a front-end-and-friends skillset.
-        </p>
-      </div>
-    </div>
-  
-    <div class="slide-halfs">
-      <div>
-        <img src="slides/Oops.026.jpeg" alt="">
-      </div>
-      <div>
-        <p>
-          To me, it seems non-JavaScript server-side rendered projects never really embraced components. You had templates and includes, but to me now, they feel like a pale comparison to real component-driven development.
-        </p>
-        <p>
-          It's facinating to see that while there is a wide variety of JavaScript-based frameworks that all disagree on plenty of things, one thing they all agree on is the idea of components. Even native web components... it's right in the name.
-        </p>
-      </div>
-    </div>
-  
-    <div class="slide-halfs">
-      <div>
-        <img src="slides/Oops.027.jpeg" alt="">
-      </div>
-      <div>
-        <p>
-          Let's take a quick look at CodePen, which is a React powered site (mostly) these days.
-        </p>
-      </div>
-    </div>
-  
-    <div class="slide-halfs">
-      <div>
-        <img src="slides/Oops.028.jpeg" alt="">
-      </div>
-      <div>
-        <p>
-          Even this tiny little SVG icon? It's a component. We call it an <code>&lt;SVGIcon /></code> component because it nicely abstracts away a few things that are useful to us.
-        </p>
-      </div>
-    </div>
-  </main>
 
-</body>
+      <div class="slide-halfs">
+        <div>
+          <img
+            src="slides/Oops.003.jpeg"
+            alt="Screenshots of CSS-Tricks and CodePen homepages"
+          />
+        </div>
+        <div>
+          <p>
+            I run the site
+            <a href="https://css-tricks.com">CSS-Tricks</a> (which recently had
+            its 12th birthday), a resource site all about building websites.
+          </p>
+          <p>
+            I co-founded the site <a href="https://codepen.io">CodePen</a>, a
+            social coding platform all about building things with front-end
+            technology.
+          </p>
+        </div>
+      </div>
 
+      <div class="slide-halfs">
+        <div>
+          <img src="slides/Oops.004.jpeg" alt="" />
+        </div>
+        <div>
+          <p>
+            I also co-host a podcast called
+            <a href="https://shoptalkshow.com">ShopTalk Show</a> which is going
+            on 400 episodes.
+          </p>
+          <p>
+            I'm sure I've talked to thousands of other developers over the
+            years, which has helped me understand the industry and the spectrum
+            of work it takes to make websites happen.
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <h2>What is a front-end developer?</h2>
+        </div>
+        <div>
+          <ul class="check-list">
+            <li>It's a job and a common job title.</li>
+          </ul>
+          <p>
+            This is important because it's not just semantics. It's a job that
+            people are hired to do, and it is their job title at work. Nothing
+            more personal than money.
+          </p>
+          <p>
+            How we define what this job is and what the expectations are is
+            personal.
+          </p>
+          <p>
+            Look at any job board that has technology jobs on it and you'll see
+            postings for <strong>front-end developers</strong>.
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <h2>What is a front-end developer?</h2>
+        </div>
+        <div>
+          <ul class="check-list">
+            <li class="fade">It's a job and a common job title.</li>
+            <li>
+              It deals very directly with the browser, devices, and users.
+            </li>
+          </ul>
+          <p>
+            Everybody that works on websites probably has their browser open all
+            day, but front-end developers <em>live</em> in there. They have
+            DevTools open. They have multiple browsers open and test across
+            versions and platforms.
+          </p>
+          <p>
+            Crucially, they care about the users that interact with those
+            browsers and assistive technology.
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <img src="slides/Oops.008.jpeg" alt="" />
+        </div>
+        <div>
+          <p>
+            Mina Markham explains what a front-end developers is at a high
+            level:
+          </p>
+          <audio src="audio/mina.mp3" controls></audio>
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <img src="slides/Oops.009.jpeg" alt="" />
+        </div>
+        <div>
+          <p>
+            There is a distinction from back-end developers. Its not that
+            back-end developers don't care about users, it's just that
+            responsibility is delegated.
+          </p>
+          <p>Monica Dinculescu puts it well:</p>
+          <audio src="audio/monica.mp3" controls></audio>
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <img src="slides/Oops.010.jpeg" alt="" />
+        </div>
+        <div>
+          <p>
+            The browser is at the heart of the job of front-end development.
+            Whatever you are doing, if your concern is how things ultimately
+            look and work in a browser, that's front-end development.
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <img src="slides/Oops.011.jpeg" alt="" />
+        </div>
+        <div>
+          <p>
+            It's harder than it gets credit for.
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <h2>What is a front-end developer?</h2>
+        </div>
+        <div>
+          <ul class="check-list">
+            <li class="fade">It's a job and a common job title.</li>
+            <li class="fade">
+              It deals very directly with the browser, devices, and users.
+            </li>
+            <li>
+              There are loads of tools involved, but ultimately it comes down to
+              HTML, CSS, and JavaScript.
+            </li>
+          </ul>
+          <p>
+            Those are the languages that browsers speak. Yes yes, there is SVG
+            and PNG and whatever else also, but you know what I mean.
+          </p>
+          <p>
+            Whatever other tooling you use, it all comes down to what ships to
+            the browser, and front-end developers are responsible for that.
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <img src="slides/Oops.013.jpeg" alt="" />
+        </div>
+        <div>
+          <p>
+            HTML, CSS, and JavaScript. They are gonna come up at work.
+          </p>
+          <p>
+            As a twist though, not all front-end developers know all the
+            languages equally well. In fact, there are lots of developers out
+            there who hardly write any JavaScript at all, but who are otherwise
+            very successful front-end developers. And there are certainly a lot
+            of front-end developers who write almost nothing
+            <em>but</em> JavaScript.
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <img src="slides/Oops.014.jpeg" alt="" />
+        </div>
+        <div>
+          <p>
+            My article
+            <a href="https://css-tricks.com/the-great-divide/"
+              >The Great Divide</a
+            >
+            digs into the split between front-end developers who are deeply into
+            JavaScript and those who are not.
+          </p>
+          <p>
+            It's not just my thoughts, but a collection of quotes from many
+            others who feel the divide.
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <img src="slides/Oops.015.jpeg" alt="" />
+        </div>
+        <div>
+          <audio src="audio/monica.mp3" controls></audio>
+          <p>
+            Brad Frost coins the terms "Front of the Front" and "Back of the
+            Front" as a way to describe another sort of divide. He points out
+            that it's not a weakness, but a strength in putting those different
+            people together.
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <blockquote class="twitter-tweet">
+            <p lang="en" dir="ltr">
+              At Google we have Front End Software Engineers and UX Engineers to
+              attempt to address these differences. The two career ladders are
+              very different with different expectations and different criteria
+              for advancement.
+            </p>
+            &mdash; Steve Paulo (@StevePaulo)
+            <a
+              href="https://twitter.com/StevePaulo/status/1087428564553613312?ref_src=twsrc%5Etfw"
+              >January 21, 2019</a
+            >
+          </blockquote>
+          <script
+            async
+            src="https://platform.twitter.com/widgets.js"
+            charset="utf-8"
+          ></script>
+        </div>
+        <div>
+          <p>
+            At Google, the divide is recognized and split by job title. Plus,
+            those two career ladders
+            <a href="https://twitter.com/StevePaulo/status/1087476505087664128"
+              >get paid the same</a
+            >.
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-whole">
+        <img src="slides/Oops.017.jpeg" alt="" />
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <img src="slides/Oops.018.jpeg" alt="" />
+        </div>
+        <div>
+          <p>
+            There is no doubt about it. Particularly since about 2015,
+            JavaScript has exploded as a language.
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-triples">
+        <div><img src="slides/Oops.019.jpeg" alt="" /></div>
+        <div><img src="slides/Oops.020.jpeg" alt="" /></div>
+        <div><img src="slides/Oops.021.jpeg" alt="" /></div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <img src="slides/Oops.022.jpeg" alt="" />
+        </div>
+        <div>
+          <p>
+            Our jobs are already facinating! So we all deal with browsers and
+            users and devices. That's core. But we all know different stuff, and
+            actually put that knowledge to work.
+          </p>
+          <p>
+            Some of us are designers. Some of us are photographers. Some of us
+            know the law really well. Some of us are way into performance. Some
+            of us specialize in accessibility. Some of us embrace social media.
+          </p>
+          <p>
+            Metaphorically, you could map us like this tree.
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <img src="slides/Oops.023.jpeg" alt="" />
+        </div>
+        <div>
+          <p>
+            This metaphor probably doesn't hold up quite perfectly, but the
+            divide looks a little something like this. We still share some
+            fundamentals, and we still branch out and know lots of different
+            stuff, but one side is heavily focused on JavaScript and "Back of
+            the Front" type work and the other is not.
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <img src="slides/Oops.024.jpeg" alt="" />
+        </div>
+        <div>
+          <p>
+            Since this talk is about the slow morphing of front-end developers
+            starting to do more full-stack work and having that role grow wider
+            and wider, let's just assume we're talking about front-end
+            developers who go down the heavier JavaScript road.
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <h2>
+            A bunch of stuff you need to do to build websites has sort of
+            <strong>moved stacks</strong>.
+          </h2>
+          <p>Back End → JavaScript</p>
+        </div>
+        <div>
+          <p>
+            That is, from more of a back-end-and-friends skillset to a
+            front-end-and-friends skillset.
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <img src="slides/Oops.026.jpeg" alt="" />
+        </div>
+        <div>
+          <p>
+            To me, it seems non-JavaScript server-side rendered projects never
+            really embraced components. You had templates and includes, but to
+            me now, they feel like a pale comparison to real component-driven
+            development.
+          </p>
+          <p>
+            It's facinating to see that while there is a wide variety of
+            JavaScript-based frameworks that all disagree on plenty of things,
+            one thing they all agree on is the idea of components. Even native
+            web components... it's right in the name.
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <img src="slides/Oops.027.jpeg" alt="" />
+        </div>
+        <div>
+          <p>
+            Let's take a quick look at CodePen, which is a React powered site
+            (mostly) these days.
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <img src="slides/Oops.028.jpeg" alt="" />
+        </div>
+        <div>
+          <p>
+            Even this tiny little SVG icon? It's a component. We call it an
+            <code>&lt;SVGIcon /></code> component because it nicely abstracts
+            away a few things that are useful to us.
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <img src="slides/Oops.029.jpeg" alt="" />
+        </div>
+        <div>
+          <p>
+            Pairing an icon with a number is another component, because it is
+            another repeated pattern and might have additional responsiblity,
+            like being clicked.
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <img src="slides/Oops.030.jpeg" alt="" />
+        </div>
+        <div>
+          <p>
+            That whole row of MetaItem components might become a component,
+            along with other aspects of an Item's display
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <img src="slides/Oops.031.jpeg" alt="" />
+        </div>
+        <div>
+          <p>
+            So of course the whole Item itself becomes a component.
+          </p>
+          <p>
+            These are visual and functional abstractions of what we need to
+            build the UIs. There is semantic HTML underneath, but the
+            abstractions are building blocks of our own devise.
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <img src="slides/Oops.032.jpeg" alt="" />
+        </div>
+        <div>
+          <p>
+            Larger and larger areas become components. In this case, it makes
+            sense that a grid of items becomes a component, so that it can
+            handle that layout and things like pagination.
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <img src="slides/Oops.033.jpeg" alt="" />
+        </div>
+        <div>
+          <p>
+            It's true! Not only are components capable of being intellegent
+            building block abstractions for UIs for front-end developers,
+            designers are largely already working this way. Tools like Figma,
+            Sketch, and Adobe XD tout things like "symbols" which are
+            spiritually connected.
+          </p>
+          <p>
+            I find other developers are like "cool, components, I get it".
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <img src="slides/Oops.034.jpeg" alt="" />
+        </div>
+        <div>
+          <p>
+            Dealing with URLs and overall site structure used to feel primarily
+            like a back end concern. These days, "routing" is becoming more and
+            more a front-end concern.
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <img src="slides/Oops.035.jpeg" alt="" />
+        </div>
+        <div>
+          <p>
+            Looking back at the CodePen UI, the components don't stop at the
+            grid. Literally everything becomes a component. The tabs, the
+            titles, the buttons...
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <img src="slides/Oops.036.jpeg" alt="" />
+        </div>
+        <div>
+          <p>
+            ... the forms, the menus, the sidebar...
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <img src="slides/Oops.037.jpeg" alt="" />
+        </div>
+        <div>
+          <p>
+            Ultimately the whole gosh-darned page becomes a component.
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <img src="slides/Oops.038.jpeg" alt="" />
+        </div>
+        <div>
+          <p>
+            Once the whole page is a component, what you've really done is
+            turned the the URL into a component.
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <img src="slides/Oops.039.jpeg" alt="" />
+        </div>
+        <div>
+          <p>
+            And now that the URL is a component, all the URLs are components,
+            and you're controlling the whole site.
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <img src="slides/Oops.040.jpeg" alt="" />
+        </div>
+        <div>
+          <p>
+            You've become an architect of the entire site, in a sense.
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <img src="slides/Oops.041.jpeg" alt="" />
+        </div>
+        <div>
+          <p>
+            That's... a lot. Think of all the work you already have to do as a
+            front-end developer. None of that goes away. You're just responsible
+            for a lot more now. It's no wonder that front-end developers are
+            feeling more and more full-stack-y.
+          </p>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>
