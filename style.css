@@ -1,0 +1,89 @@
+:root {
+  --yel: #f0bb40;
+  --gr: #5fcd73;
+}
+html {
+  font-size: 166%;
+  font-family: "Inter UI", system-ui, sans-serif;
+  line-height: 1.4;
+}
+body {
+  background: #000000;
+  color: #eee;
+  padding: 2rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+li {
+  max-width: 875px;
+}
+h1,
+h2,
+h3,
+h4 {
+  color: var(--yel);
+  line-height: 1.2;
+  margin: 0 0 1rem 0;
+}
+h1 {
+  font-size: 2.75rem;
+}
+h2 {
+  font-size: 1.75rem;
+}
+strong {
+  color: var(--gr);
+}
+a {
+  background: #732d2d;
+  color: inherit;
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  outline: 1px solid red;
+}
+img {
+  max-width: 100%;
+  border-radius: 4px;
+}
+.fade {
+  opacity: 0.5;
+}
+
+.by {
+  font-size: 32px;
+  padding-bottom: 4px;
+  border-bottom: 5px solid var(--yel);
+  margin-top: 100px;
+}
+
+.check-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.check-list li {
+  padding-left: 50px;
+  background: url(images/check.svg) no-repeat top left;
+  background-size: 40px;
+}
+
+[class^="slide"] {
+  margin-top: 100px;
+}
+.slide-halfs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 35px;
+  min-height: 400px;
+}
+.slide-triples {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 15px;
+}
