@@ -10,6 +10,9 @@ html {
 body {
   background: #000000;
   color: #eee;
+  margin: 0;
+}
+main {
   padding: 2rem;
 }
 
@@ -30,7 +33,7 @@ h4 {
   margin: 0 0 1rem 0;
 }
 h1 {
-  font-size: 2.75rem;
+  font-size: calc(2rem + 1.5vw);
 }
 h2 {
   font-size: 1.75rem;
@@ -55,11 +58,42 @@ img {
   opacity: 0.5;
 }
 
+.callout {
+  background: var(--yel);
+  color: black;
+  padding: 1rem;
+}
+
+.talk-header {
+  padding: 200px 0;
+}
+
 .by {
   font-size: 32px;
   padding-bottom: 4px;
   border-bottom: 5px solid var(--yel);
-  margin-top: 100px;
+  margin: 100px 0;
+}
+
+.video-toggle {
+  background: var(--gr);
+  color: black;
+  padding: 1rem;
+  outline: 5px solid var(--yel);
+  outline-offset: 10px;
+}
+.video {
+  height: 0;
+  position: relative;
+  padding-top: 56.25%;
+  margin-top: 1rem;
+}
+.video > iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .check-list {
