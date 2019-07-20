@@ -604,6 +604,308 @@
           </p>
         </div>
       </div>
+
+      <div class="slide-halfs">
+        <div>
+          <img src="slides/Oops.042.jpeg" alt="" />
+        </div>
+        <div>
+          <p>
+            Another thing that has fallen into the hands of front-end developers
+            is state management. Now that's kind of at the core of most
+            JavaScript frameworks and it's a pretty great concept that wipes
+            away a lot of front-end spaghetti problems of the past.
+          </p>
+          <p>
+            But state is often filled from <em>getting</em> data, and that's now
+            often on our shoulders as well.
+          </p>
+          <p>
+            Even more complicated is changing that data when necessary and
+            sending data back to servers when required.
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <img src="slides/Oops.043.jpeg" alt="" />
+        </div>
+        <div>
+          <p>
+            <a href="https://graphql.org/">GraphQL</a> is a pretty great answer
+            to some of this. GraphQL is a lot of things and meaningful to
+            different people in different ways. But to me, it's about
+            empowerment.
+          </p>
+          <p>
+            With a strong GraphQL endpoint in place, and tools like
+            <a href="https://www.apollographql.com/">Apollo</a> giving me tools
+            to use in my JavaScript framework, I can, as a front-end developer,
+            get my hands on any data I need to build UI.
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <img src="slides/Oops.044.jpeg" alt="" />
+        </div>
+        <div>
+          <p>
+            Not only can I <em>get</em> data, but it's on me to update that data
+            and send it back through GraphQL in the form of mutations.
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <img src="slides/Oops.045.jpeg" alt="" />
+        </div>
+        <div>
+          <p>
+            Mutations aren't terribly more complicated than queries, but it's
+            all the more work that is on my plate as a front-end developer. Work
+            that was almost surely in the realm of back-end development before.
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <img src="slides/Oops.046.jpeg" alt="" />
+        </div>
+        <div>
+          <p>
+            While we're talking about components, queries, and mutations, let's
+            throw one more thing on the pile: styling.
+          </p>
+          <p>
+            Front-end developers have always been in charge of styling, but in a
+            land of components that are self-contained in so many other ways, it
+            starts to make sense to co-locate the styling information as well.
+          </p>
+          <p>
+            Here we're using
+            <a href="https://github.com/css-modules/css-modules">CSS modules</a>
+            to scope the styles to a specific component. We can and do still
+            have global styles, and we even continue to use
+            <a href="https://sass-lang.com/">Sass</a> for useful global
+            abstractions.
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <img src="slides/Oops.047.jpeg" alt="" />
+        </div>
+        <div>
+          <p>
+            The result of this componentization and co-locating is nice little
+            folders that have everything from logic, to view templates, to
+            queries and mutations, to styling all together.
+          </p>
+          <p>
+            It's convenient, but it has cool interesting side effects.
+            JavaScript bundles only contain what they need. Styling doesn't get
+            bloated because when components stop being used, their styles leave
+            with them.
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/783ccP__No8"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div>
+          <p>
+            The GraphQL documentary is kinda fun. I like what Kyle Mathews says
+            (about 20:24) about React wiping away a whole class of front-end
+            development problems, and how GraphQL does a similar sort of thing.
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <h2>
+            Everything we already need to do, to name a few:
+          </h2>
+          <ul>
+            <li>Pulling of the design</li>
+            <li>Making the design part of a system</li>
+            <li>Making sure it is accessible</li>
+            <li>Worrying about the performance</li>
+            <li>Testing things across browsers</li>
+            <li>Testing things across devices</li>
+            <li>Sweating the UX</li>
+          </ul>
+        </div>
+        <div>
+          <h2>
+            New responsibilities
+          </h2>
+          <ul>
+            <li>Component-driven design, designing our own abstractions</li>
+            <li>Site-level architecture</li>
+            <li>Routing</li>
+            <li>Fetching our own data</li>
+            <li>Talking to APIs</li>
+            <li>Mutating data</li>
+            <li>State management</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <img src="slides/Oops.052.jpeg" alt="" />
+        </div>
+        <div>
+          <p>
+            The haystack of responsibilities grows and grows and grows.
+          </p>
+          <p>
+            That's not to say that all of us need to know every single part of
+            this and do it perfectly well, but it is to say that these are tasks
+            that fall within the realm of front-end web development.
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <img src="slides/Oops.053.jpeg" alt="" />
+        </div>
+        <div>
+          <p>
+            Peggy Rayzis talks about how wide the term front-end developer has
+            gotten and that it's likely we're specializing.
+          </p>
+          <audio src="audio/peggy.mp3" controls></audio>
+        </div>
+      </div>
+
+      <div class="slide-whole">
+        <h2>
+          Again, a bunch of tasks have sort of moved stacks. From what used to
+          be rather back-end jobs to being in the JavaScript realm.
+        </h2>
+        <p>
+          Let's draw a spectrum and see how that has morphed through time.
+        </p>
+      </div>
+
+      <div class="slide-whole">
+        <img src="slides/Oops.056.jpeg" alt="" />
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <img src="slides/Oops.057.jpeg" alt="" />
+        </div>
+        <div>
+          <p>
+            LAMP is Linux, Apache, MySQL,and PHP. It's a rather old stack, but
+            it's still very huge. It's what an awful lot of CMS's run. LAMP is
+            how the stack is talked about.
+          </p>
+          <p>
+            If I'm a front-end developer working in that stack, I'm way over on
+            the other side of the spectrum, not touching much of the technology
+            the stack is referring to.
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <img src="slides/Oops.058.jpeg" alt="" />
+        </div>
+        <div>
+          <p>
+            MEAN is another stack, referring to MongoDB, Express, Angular, and
+            Node. Notice the OS isn't mentioned anymore.
+          </p>
+          <p>
+            Notably, Angular is a front-end framework, so the stack is starting
+            to include that. If I'm a front-end developer, what I'm working on
+            overlaps with the stack.
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <img src="slides/Oops.059.jpeg" alt="" />
+        </div>
+        <div>
+          <p>
+            Serverless moves the stack further to the right. We don't even care
+            what servers the code runs on anymore, it's just server-side code
+            using and creating APIs.
+          </p>
+          <p>
+            If I'm a front-end developer working in this world, I overlap in
+            that I might even be using my JavaScript abilities to be writing
+            these serverless functions and digesting the APIs.
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <img src="slides/Oops.060.jpeg" alt="" />
+        </div>
+        <div>
+          <p>
+            <a
+              href="https://css-tricks.com/star-apps-a-new-generation-of-front-end-tooling-for-development-workflows/"
+              >Shawn Wang called</a
+            >
+            Design Systems, TypeScript, Apollo GraphQL, and React a STAR app.
+          </p>
+          <p>That's... like... <em>all</em> front end stuff.</p>
+          <p>
+            It seems to me the way we talk about the important technology that
+            powers websites shifts more and more toward the front-end developer
+            spectrum.
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-whole">
+        <h2>
+          Let’s take a quick look at how <strong>serverless</strong> is
+          expanding our front-end powers.
+        </h2>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <a href="https://serverless.css-tricks.com/"
+            ><img src="slides/Oops.062.jpeg" alt=""
+          /></a>
+        </div>
+        <div>
+          <p>
+            <a href="https://serverless.css-tricks.com/"
+              >I made a website about serverless stuff</a
+            >
+            because I think it's cool and a big deal.
+          </p>
+        </div>
+      </div>
     </main>
   </body>
 </html>
