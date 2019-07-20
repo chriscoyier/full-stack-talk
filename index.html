@@ -48,7 +48,7 @@
           better at it.
         </h2>
         <p>
-          and boy is it blowing up
+          <small>and boy is it blowing up</small>
         </p>
       </div>
 
@@ -63,11 +63,14 @@
           <p>
             I run the site
             <a href="https://css-tricks.com">CSS-Tricks</a> (which recently had
-            its 12th birthday), a resource site all about building websites.
+            its
+            <a href="https://css-tricks.com/the-twelfth-fourth/"
+              >12th birthday</a
+            >), a resource site all about building websites.
           </p>
           <p>
-            I co-founded the site <a href="https://codepen.io">CodePen</a>, a
-            social coding platform all about building things with front-end
+            I also co-founded the site <a href="https://codepen.io">CodePen</a>,
+            a social coding platform all about building things with front-end
             technology.
           </p>
         </div>
@@ -718,14 +721,16 @@
 
       <div class="slide-halfs">
         <div>
-          <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/783ccP__No8"
-            frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
+          <div class="video">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/783ccP__No8"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
         </div>
         <div>
           <p>
@@ -906,6 +911,284 @@
           </p>
         </div>
       </div>
+
+      <div class="slide-halfs">
+        <div>
+          <img src="images/jamstack.png" alt="JAMstack logo" />
+        </div>
+        <div>
+          <p>
+            I consider <a href="https://jamstack.org/">JAMstack</a> to
+            essentially be a part of the serverless movement. Natch.
+          </p>
+          <p>
+            Javascript, APIs, and Markup. Although I would say, half
+            tounge-in-cheek, that
+            <a href="https://css-tricks.com/jamstack-more-like-shamstack/"
+              >SHAMstack</a
+            >
+            makes a bit more sense.
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <a href="https://conferences.css-tricks.com/"
+            ><img src="slides/Oops.064.jpeg" alt=""
+          /></a>
+        </div>
+        <div>
+          <p>
+            Here's a perfect example of a JAMstack site that leverages
+            serverless tech to do the things it needs to do.
+          </p>
+          <p>
+            It's
+            <a href="https://conferences.css-tricks.com/"
+              >a site that lists upcoming conferences</a
+            >
+            related to front-end development.
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <pre><code>---
+<span class="token keyword">title:</span> JAMstack_conf_ldn
+<span class="token keyword">url:</span> 'https://jamstackconf.com/london/'
+<span class="token keyword">cocUrl:</span> 'https://jamstackconf.com/london/code-of-conduct'
+<span class="token keyword">date:</span> 2019-07-09T08:00:00.000Z
+<span class="token keyword">endDate:</span> 2019-07-10T16:00:00.000Z
+<span class="token keyword">location:</span> 'London, England'
+<span class="token keyword">byline:</span>
+  'Learn how to design, develop, and deploy fast, modern web projects that run
+  without web servers.'
+---
+
+Following the inaugural [JAMstack_conf in San Francisco](https://2018.jamstackconf.com/) in 2018, we're now also bringing an edition to London where we'll have talks about how to design, develop, and deploy fast, modern web projects that run without web servers.</code></pre>
+        </div>
+        <div>
+          <p>
+            Each conference is a
+            <a href="https://commonmark.org/">Markdown</a> file with
+            <a href="https://jekyllrb.com/docs/front-matter/">Front Matter</a>
+            to describe meta data associated with the conference, like the city
+            and dates.
+          </p>
+          <p>
+            I wasn't deliberately trying to avoid a database, but this just
+            seemed like the perfect kind of site to use a
+            <a href="https://serverless.css-tricks.com/services/ssgs"
+              >static site generator</a
+            >
+            for and the data needs are so basic that flat Markdown files are a
+            natural fit.
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <img src="slides/Oops.066.jpeg" alt="" />
+        </div>
+        <div>
+          <p>
+            So each conference is a Markdown file, and there are some basic
+            templates in
+            <a href="https://mozilla.github.io/nunjucks/">Nunjucks</a>, and
+            <a href="https://www.11ty.io/">Eleventy</a> is wonderful for
+            processing that kind of setup.
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <img src="slides/Oops.067.jpeg" alt="" />
+        </div>
+        <div>
+          <p>
+            The site is
+            <a href="https://github.com/CSS-Tricks/conferences"
+              >a public repo on GitHub</a
+            >. That seems obvious, perhaps, but I think it's hugely significant
+            here.
+          </p>
+          <p>
+            It means that:
+          </p>
+          <ol>
+            <li>
+              The entire site is in the repo. To run it, you pull it down and
+              run a single command.
+            </li>
+            <li>
+              There is no fiddling with log ins, permissions, or credentials.
+            </li>
+            <li>
+              It opens up the <em>content</em> of the site for public
+              contributions, as well as the design and functionality. This has
+              been huge.
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <img src="slides/Oops.068.jpeg" alt="" />
+        </div>
+        <div>
+          <p>
+            The site being on GitHub means I could just leave it on GitHub
+            Pages, but it's like a 2-second process to put in on Netlify, which
+            is a massive improvement. Here's a few reasons:
+          </p>
+          <ul>
+            <li>
+              <a href="https://www.netlify.com/docs/continuous-deployment/"
+                >Deploy previews.</a
+              >
+              When I get a Pull Request, I can take a look at a live URL of what
+              the site will be like with that Pull Request merged. Amazing.
+            </li>
+            <li>
+              I can activate
+              <a href="https://www.netlify.com/products/analytics/"
+                >Analytics</a
+              >
+              on the site and get the most accurate possible numbers.
+            </li>
+            <li>
+              I can
+              <a href="https://www.netlify.com/docs/image-transformation/"
+                >fiddle with my images</a
+              >
+              programattically.
+            </li>
+          </ul>
+          <p>
+            There are a couple other big ones though...
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <img src="slides/Oops.069.jpeg" alt="" />
+        </div>
+        <div>
+          <p>
+            With <a href="https://www.netlifycms.org/">Netlify CMS</a>, I get a
+            UI to edit content right on the site itself. No code editing or Git
+            involved at all once it's set up.
+          </p>
+          <p>
+            I don't even need Netlify to use Netlify CMS, but
+            <a href="https://www.netlify.com/docs/identity/"
+              >Netlify Identity</a
+            >
+            makes the auth part a million times easier.
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <div class="center">
+            🔽 video 🔽
+          </div>
+          <div class="video">
+            <video src="video/email.mp4" controls></video>
+          </div>
+        </div>
+        <div>
+          <p>
+            Check out this feature of the conference site. For each conference,
+            you can click a button that reveals an email input form. Enter an
+            email and submit, and the site fires off an email with details about
+            the conference.
+          </p>
+          <p>
+            That's a back-end thing. You can't really send email with
+            client-side technology alone. You can communicate with APIs that
+            will send email, but even that requires API keys that need to be
+            kept secret via back-end code.
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <pre><code class="language-javascript">const SparkPost = require('sparkpost');
+const client = new SparkPost(process.env.SPARKPOST);
+
+exports.handler = function(event, context, callback) {
+  client.transmissions
+    .send({
+      content: {
+        from: 'chris@css-tricks.com',
+        subject: `Conference!`,
+        html: `
+          &lt;html>
+            &lt;body>
+              &lt;h1>Hello, World!&lt;/h1>
+            &lt;/body>
+          &lt;/html>`
+      },
+      recipients: [{ address: email }]
+    })
+    .then(data => {
+      callback(null, {
+        statusCode: 200,
+        body: `Message sent!`
+      });
+    });
+};</code></pre>
+        </div>
+        <div>
+          <p>
+            I'll use <a href="https://www.sparkpost.com/">Sparkpost</a> to send
+            the email. They offer APIs to send email (that's the entire point).
+            They also offer a Node.js library to make it very easy. Ultimately
+            just a few lines of code.
+          </p>
+          <p>
+            And that code? It's JavaScript. I'm a JavaScript developer. This is
+            not a stretch.
+          </p>
+
+          <h3>How do I <em>run</em> this?</h3>
+
+          <p>
+            That's the meat and potatoes of serverless:
+            <a href="https://serverless.css-tricks.com/services/functions"
+              >cloud functions</a
+            >. I'm talking about
+            <a href="https://aws.amazon.com/lambda/">AWS Lambda</a>,
+            <a href="https://azure.microsoft.com/en-us/services/functions/"
+              >Azure Functions</a
+            >,
+            <a href="https://cloud.google.com/functions/"
+              >Google Cloud Functions</a
+            >, etc.
+          </p>
+          <p>
+            The Netlify version, which is AWS Lamba under the hood, is
+            <a href="https://www.netlify.com/docs/functions/"
+              >Netlify Functions</a
+            >. It's amazing in that it's actually just like:
+            <em
+              >"toss your functions in a `/functions/` folder and we'll give you
+              a relative URL to run them"</em
+            >. Which is great.
+          </p>
+        </div>
+      </div>
     </main>
+
+    <script src="scripts/prism.js"></script>
   </body>
 </html>
