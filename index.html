@@ -21,7 +21,7 @@
       </header>
 
       <div class="by">
-        A talk by Chris Coyier //
+        A talk in 2019 by Chris Coyier //
         <a href="https://chriscoyier.net">chriscoyier.net</a>
       </div>
 
@@ -38,6 +38,12 @@
         </div>
         <summary>
           View a YouTube video of the talk I recorded in my booth.
+          <br />
+          <small>
+            &emsp;&nbsp;&nbsp;(it probably has some nuance and enthusiasm that
+            the paragraphs below lack. but you also can't click links and stuff.
+            it's a video.)
+          </small>
         </summary>
       </details>
 
@@ -48,7 +54,7 @@
           better at it.
         </h2>
         <p>
-          <small>and boy is it blowing up</small>
+          <small>and boy are my arms tired</small>
         </p>
       </div>
 
@@ -108,8 +114,8 @@
             more personal than money.
           </p>
           <p>
-            How we define what this job is and what the expectations are is
-            personal.
+            How we define what this job is and what the expectations are
+            <em>is personal</em>.
           </p>
           <p>
             Look at any job board that has technology jobs on it and you'll see
@@ -229,12 +235,12 @@
             HTML, CSS, and JavaScript. They are gonna come up at work.
           </p>
           <p>
-            As a twist though, not all front-end developers know all the
-            languages equally well. In fact, there are lots of developers out
-            there who hardly write any JavaScript at all, but who are otherwise
-            very successful front-end developers. And there are certainly a lot
-            of front-end developers who write almost nothing
-            <em>but</em> JavaScript.
+            Not all front-end developers know all the languages equally well. In
+            fact, there are lots of developers out there who hardly write any
+            JavaScript at all, but who are otherwise very successful front-end
+            developers. And there are also a lot of front-end developers who
+            write almost nothing
+            <em>but</em> JavaScript. 🤯
           </p>
         </div>
       </div>
@@ -394,16 +400,22 @@
         </div>
       </div>
 
+      <div class="slide-whole">
+        <h2 class="center">Component-Driven Design & Development</h2>
+        <p class="center">Thanks, <del>Obama</del> JavaScript.</p>
+      </div>
+
       <div class="slide-halfs">
         <div>
           <img src="slides/Oops.026.jpeg" alt="" />
         </div>
         <div>
           <p>
-            To me, it seems non-JavaScript server-side rendered projects never
-            really embraced components. You had templates and includes, but to
-            me now, they feel like a pale comparison to real component-driven
-            development.
+            It seems to me non-JavaScript server-side rendered projects never
+            really embraced components. (There are examples, don't @ me, but I
+            mean across the gigantic PHP CMS landscape and Ruby on Rails and
+            huge players like that.) You had templates and includes, but they
+            are a pale comparison to real component-driven development.
           </p>
           <p>
             It's facinating to see that while there is a wide variety of
@@ -416,12 +428,13 @@
 
       <div class="slide-halfs">
         <div>
-          <img src="slides/Oops.027.jpeg" alt="" />
+          <img src="slides/Oops.027.png" alt="" />
         </div>
         <div>
           <p>
-            Let's take a quick look at CodePen, which is a React powered site
-            (mostly) these days.
+            Let's take a quick look at CodePen, which is a
+            <a href="https://reactjs.org/">React</a> powered site (mostly) these
+            days.
           </p>
         </div>
       </div>
@@ -511,9 +524,22 @@
         </div>
       </div>
 
+      <div class="slide-whole">
+        <h2 class="center">
+          Site-Level Architecture / Routing
+        </h2>
+        <p class="center">
+          Back End → JavaScript
+        </p>
+      </div>
+
       <div class="slide-halfs">
         <div>
           <img src="slides/Oops.034.jpeg" alt="" />
+          <p>
+            OK I guess this is my job now. It makes sense and I like the
+            control, but it's a big serious job.
+          </p>
         </div>
         <div>
           <p>
@@ -521,6 +547,21 @@
             like a back end concern. These days, "routing" is becoming more and
             more a front-end concern.
           </p>
+          <pre><code class="language-jsx">&lt;Suspense fallback={&lt;Spinner />}&gt;
+  &lt;Route
+    exact
+    path={['/', '/picked-pens']}
+    component={anon ? AnonHomepage : Homepage}
+  /&gt;
+  &lt;Route path={['/topics', '/topic']} component={Topics} /&gt;
+  &lt;Route path={['/challenges']} component={Challenges} /&gt;
+  &lt;Route path=&quot;/instagram&quot; component={Instagram} /&gt;
+  &lt;Route path=&quot;/dashboard&quot; component={Dashboard} /&gt;
+  &lt;Route
+    path={['/profile_new/:username', '/profile_new/team/:teamname']}
+    component={Profile}
+  /&gt;
+&lt;/Suspense&gt;</code></pre>
         </div>
       </div>
 
@@ -571,15 +612,13 @@
         </div>
       </div>
 
-      <div class="slide-halfs">
+      <div class="slide-whole">
         <div>
-          <img src="slides/Oops.039.jpeg" alt="" />
-        </div>
-        <div>
-          <p>
+          <p class="center">
             And now that the URL is a component, all the URLs are components,
             and you're controlling the whole site.
           </p>
+          <img src="slides/Oops.039.jpeg" alt="" />
         </div>
       </div>
 
@@ -606,6 +645,15 @@
             feeling more and more full-stack-y.
           </p>
         </div>
+      </div>
+
+      <div class="slide-whole">
+        <h2 class="center">
+          State Management + Getting & Mutating Data
+        </h2>
+        <p class="center">
+          Back End → JavaScript
+        </p>
       </div>
 
       <div class="slide-halfs">
@@ -1186,6 +1234,17 @@ exports.handler = function(event, context, callback) {
             >. Which is great.
           </p>
         </div>
+      </div>
+
+      <div class="slide-whole">
+        <h2>
+          It feels very powerful to be able to build the entire site from front
+          to back like that.
+        </h2>
+        <h2>
+          Let's revisit the spectrum of technology again with this modern stuff
+          in mind.
+        </h2>
       </div>
     </main>
 

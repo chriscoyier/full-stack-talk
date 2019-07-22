@@ -91,6 +91,7 @@ pre {
 }
 .center {
   text-align: center;
+  max-width: 100%;
 }
 
 .callout {
@@ -179,7 +180,6 @@ pre[class*="language-"] {
   font-size: 1em;
   text-align: left;
   text-shadow: 0 -0.1em 0.2em black;
-  white-space: pre;
   word-spacing: normal;
   word-break: normal;
   word-wrap: normal;
