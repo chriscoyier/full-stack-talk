@@ -15,7 +15,8 @@
     <main>
       <header class="talk-header">
         <h1>
-          oooooops I guess we’re* full-stack developers&nbsp;now
+          <span class="rotate">ooooops</span> I guess we’re* full-stack
+          developers&nbsp;now
         </h1>
         <p>*by "we're" i mean front-end developers</p>
       </header>
@@ -41,8 +42,7 @@
           <br />
           <small>
             &emsp;&nbsp;&nbsp;(it probably has some nuance and enthusiasm that
-            the paragraphs below lack. but you also can't click links and stuff.
-            it's a video.)
+            the paragraphs below lack.)
           </small>
         </summary>
       </details>
@@ -85,6 +85,14 @@
       <div class="slide-halfs">
         <div>
           <img src="slides/Oops.004.jpeg" alt="" />
+          <p class="center">
+            <small>
+              <a
+                href="https://podcasts.apple.com/us/podcast/shoptalk-podcast-feed/id493890455"
+                >like & subscribe on itunes</a
+              >
+            </small>
+          </p>
         </div>
         <div>
           <p>
@@ -228,12 +236,10 @@
 
       <div class="slide-halfs">
         <div>
-          <img src="slides/Oops.013.jpeg" alt="" />
+          <img src="slides/Oops.013.jpeg" alt="HTML CSS JS" />
+          <small>They are gonna come up at work.</small>
         </div>
         <div>
-          <p>
-            HTML, CSS, and JavaScript. They are gonna come up at work.
-          </p>
           <p>
             Not all front-end developers know all the languages equally well. In
             fact, there are lots of developers out there who hardly write any
@@ -270,7 +276,7 @@
           <img src="slides/Oops.015.jpeg" alt="" />
         </div>
         <div>
-          <audio src="audio/monica.mp3" controls></audio>
+          <audio src="audio/brad.mp3" controls></audio>
           <p>
             Brad Frost coins the terms "Front of the Front" and "Back of the
             Front" as a way to describe another sort of divide. He points out
@@ -333,6 +339,12 @@
         <div><img src="slides/Oops.020.jpeg" alt="" /></div>
         <div><img src="slides/Oops.021.jpeg" alt="" /></div>
       </div>
+      <p>
+        <small
+          >If you need to look at these bigger, use DevTools or whatever. C'mon
+          you're front-end developers right?</small
+        >
+      </p>
 
       <div class="slide-halfs">
         <div>
@@ -658,7 +670,7 @@
 
       <div class="slide-halfs">
         <div>
-          <img src="slides/Oops.042.jpeg" alt="" />
+          <img src="slides/Oops.042.png" alt="" />
         </div>
         <div>
           <p>
@@ -695,6 +707,42 @@
             to use in my JavaScript framework, I can, as a front-end developer,
             get my hands on any data I need to build UI.
           </p>
+
+          <pre><code class="language-jsx">import gql from "graphql-tag";
+import { Query } from "react-apollo";
+
+const GET_DOGS = gql`
+  {
+    dogs {
+      id
+      breed
+    }
+  }
+`;
+
+const Dogs = () => (
+  &lt;Query query={GET_DOGS}>
+    {({ loading, error, data }) => {
+      if (loading) return `Loading...`;
+      if (error) return `Error`;
+
+      return (
+        {data.dogs.map(dog => (
+          &lt;div key={dog.id}>
+            {dog.breed}
+          &lt;/div>
+        ))}
+      );
+    }}
+  &lt;/Query>
+);</code></pre>
+
+          <p>
+            Note that not only am I getting all my own data, I'm managing the
+            asyncronous nature of the component. Should I show a skeleton right
+            away? A spinner? Should I delay rendering until the data is ready?
+            What happens if it times out or there is another error?
+          </p>
         </div>
       </div>
 
@@ -704,9 +752,48 @@
         </div>
         <div>
           <p>
-            Not only can I <em>get</em> data, but it's on me to update that data
-            and send it back through GraphQL in the form of mutations.
+            Not only can I <em>get</em> data, but it's <em>on me</em> update
+            that data and send it back through GraphQL in the form of mutations.
           </p>
+
+          <pre><code class="language-jsx">import gql from "graphql-tag";
+import { Mutation } from "react-apollo";
+
+const ADD_TODO = gql`
+  mutation AddTodo($type: String!) {
+    addTodo(type: $type) {
+      id
+      type
+    }
+  }
+`;
+
+const AddTodo = () => {
+  let input;
+
+  return (
+    &lt;Mutation mutation={ADD_TODO}>
+      {(addTodo, { data }) => (
+        &lt;div>
+          &lt;form
+            onSubmit={e => {
+              e.preventDefault();
+              addTodo({ variables: { type: input.value } });
+              input.value = "";
+            }}
+          >
+            &lt;input
+              ref={node => {
+                input = node;
+              }}
+            />
+            &lt;button type="submit">Add Todo&lt;/button>
+          &lt;/form>
+        &lt;/div>
+      )}
+    &lt;/Mutation>
+  );
+};</code></pre>
         </div>
       </div>
 
@@ -719,6 +806,14 @@
             Mutations aren't terribly more complicated than queries, but it's
             all the more work that is on my plate as a front-end developer. Work
             that was almost surely in the realm of back-end development before.
+          </p>
+
+          <p>
+            Note that the above examples were illustrative of GraphQL, but done
+            through
+            <a href="https://www.apollographql.com/docs/react/"
+              >Apollo Client implemented in React</a
+            >.
           </p>
         </div>
       </div>
@@ -745,6 +840,12 @@
             <a href="https://sass-lang.com/">Sass</a> for useful global
             abstractions.
           </p>
+          <pre><code class="language-css">.root {
+  display: grid;
+}</code></pre>
+          <pre><code class="language-jsx">@import styles from './styles.scss';
+
+&lt;NewsItems className={styles.root} /></code></pre>
         </div>
       </div>
 
@@ -759,10 +860,16 @@
             queries and mutations, to styling all together.
           </p>
           <p>
-            It's convenient, but it has cool interesting side effects.
-            JavaScript bundles only contain what they need. Styling doesn't get
-            bloated because when components stop being used, their styles leave
-            with them.
+            It's convenient, but it has cool interesting side effects. For
+            example, JavaScript bundles may contain what they need (code
+            splitting). Styling doesn't get
+            <a
+              href="https://css-tricks.com/oh-no-stylesheet-grows-grows-grows-append-stylesheet-problem/"
+              >bloated</a
+            >
+            because when components stop being used because their styles leave
+            with them. Not to mention naming things is a lot less stressful
+            since the naming is file-scoped.
           </p>
         </div>
       </div>
@@ -786,15 +893,21 @@
             (about 20:24) about React wiping away a whole class of front-end
             development problems, and how GraphQL does a similar sort of thing.
           </p>
+          <p>
+            For every project? Of course not. But for the somewhat large and
+            complex apps that we're so often expected to build and maintain:
+            yes.
+          </p>
         </div>
       </div>
 
       <div class="slide-halfs">
         <div>
           <h2>
-            Everything we already need to do, to name a few:
+            All the very huge responsibilities front-end developers already
+            have:
           </h2>
-          <ul>
+          <ul class="colored-list">
             <li>Pulling of the design</li>
             <li>Making the design part of a system</li>
             <li>Making sure it is accessible</li>
@@ -806,9 +919,9 @@
         </div>
         <div>
           <h2>
-            New responsibilities
+            Oh hello, big pile of new responsibilities
           </h2>
-          <ul>
+          <ul class="colored-list">
             <li>Component-driven design, designing our own abstractions</li>
             <li>Site-level architecture</li>
             <li>Routing</li>
@@ -946,9 +1059,7 @@
 
       <div class="slide-halfs">
         <div>
-          <a href="https://serverless.css-tricks.com/"
-            ><img src="slides/Oops.062.jpeg" alt=""
-          /></a>
+          <img src="slides/Oops.062.jpeg" alt="" />
         </div>
         <div>
           <p>
@@ -967,7 +1078,10 @@
         <div>
           <p>
             I consider <a href="https://jamstack.org/">JAMstack</a> to
-            essentially be a part of the serverless movement. Natch.
+            essentially be a part of the serverless movement.
+            <small>
+              Natch.
+            </small>
           </p>
           <p>
             Javascript, APIs, and Markup. Although I would say, half
@@ -1003,16 +1117,14 @@
 
       <div class="slide-halfs">
         <div>
-          <pre><code>---
+          <pre><code class="language-markdown">---
 <span class="token keyword">title:</span> JAMstack_conf_ldn
 <span class="token keyword">url:</span> 'https://jamstackconf.com/london/'
 <span class="token keyword">cocUrl:</span> 'https://jamstackconf.com/london/code-of-conduct'
 <span class="token keyword">date:</span> 2019-07-09T08:00:00.000Z
 <span class="token keyword">endDate:</span> 2019-07-10T16:00:00.000Z
 <span class="token keyword">location:</span> 'London, England'
-<span class="token keyword">byline:</span>
-  'Learn how to design, develop, and deploy fast, modern web projects that run
-  without web servers.'
+<span class="token keyword">byline:</span> 'Learn how to design, develop, and deploy fast, modern web projects that run without web servers.'
 ---
 
 Following the inaugural [JAMstack_conf in San Francisco](https://2018.jamstackconf.com/) in 2018, we're now also bringing an edition to London where we'll have talks about how to design, develop, and deploy fast, modern web projects that run without web servers.</code></pre>
@@ -1039,7 +1151,7 @@ Following the inaugural [JAMstack_conf in San Francisco](https://2018.jamstackco
 
       <div class="slide-halfs">
         <div>
-          <img src="slides/Oops.066.jpeg" alt="" />
+          <img src="slides/Oops.066.png" alt="" />
         </div>
         <div>
           <p>
@@ -1227,11 +1339,8 @@ exports.handler = function(event, context, callback) {
             The Netlify version, which is AWS Lamba under the hood, is
             <a href="https://www.netlify.com/docs/functions/"
               >Netlify Functions</a
-            >. It's amazing in that it's actually just like:
-            <em
-              >"toss your functions in a `/functions/` folder and we'll give you
-              a relative URL to run them"</em
-            >. Which is great.
+            >. It's stupid easy. You just toss your functions in a `/functions/`
+            folder and run them by hitting a relative URL.
           </p>
         </div>
       </div>
@@ -1245,6 +1354,189 @@ exports.handler = function(event, context, callback) {
           Let's revisit the spectrum of technology again with this modern stuff
           in mind.
         </h2>
+      </div>
+
+      <div class="slide-whole">
+        <img src="slides/Oops.076.jpeg" alt="" />
+        <p>
+          I don't really have to care about operating systems and servers.
+          Entire products can be built without having to care about these.
+        </p>
+      </div>
+
+      <div class="slide-whole">
+        <img src="slides/Oops.078.jpeg" alt="" />
+        <p>
+          I probably don't need to care much about databases either. It's not
+          that databases aren't important, it's just that my dealing with data
+          is likely to happen through APIs. Perhaps a Headless CMS (e.g.
+          <a href="https://www.contentful.com/">Contentful</a>). Perhaps a data
+          storage tool that is designed to work through APIs (e.g.
+          <a href="https://fauna.com/">FaunaDB</a>) or on-page libraries (e.g.
+          <a href="https://firebase.google.com/docs/firestore">Firestore</a>).
+        </p>
+      </div>
+
+      <div class="slide-whole">
+        <img src="slides/Oops.082.jpeg" alt="" />
+        <p>
+          So now I'm left with a spectrum of technology where I can work with
+          all parts of it.
+        </p>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <h2>
+            So I'm feeling pretty full-stacky already. But you take all that and
+            add in:
+          </h2>
+        </div>
+        <div>
+          <ul class="colored-list">
+            <li>I know Git</li>
+            <li>I can write tests</li>
+
+            <li>
+              I design
+            </li>
+            <li>
+              I know about build processes
+            </li>
+            <li>I care about performance</li>
+            <li>
+              I can make sites accessible
+            </li>
+            <li>
+              I can set up a basic deploy pipeline
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="slide-whole">
+        <div
+          style="font-size: 300%; text-align: center; font-weight: 900; color: #FCE24C; line-height: 1.2; max-width: 500px; margin: 0 auto;"
+        >
+          🎉<br />
+          You're Gosh Danged Right I’m a Full-Stack Developer!
+        </div>
+      </div>
+
+      <div class="slide-whole center">
+        <small>butttttttt</small>
+        <img src="slides/Oops.086.jpeg" alt="" />
+        <div>The haystack of skills here is getting extremely large.</div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <h2>
+            You can totally specialize. You probably will anyway. That’s good.
+          </h2>
+        </div>
+        <div>
+          <p>
+            "Actual" unicorns, those people that are very good at every task
+            across the entire spectrum of building websites: as rare as actual
+            unicorns.
+          </p>
+          <p>
+            I'm also not trying to insinuate that back-end developers are
+            becoming obsolete. In fact, the fact that building websites has
+            gotten so damn complex, they are more important than ever.
+          </p>
+          <p>
+            Right now, I can open up the CodePen issue tracker and see 89 issues
+            that I can't solve alone. I need back-end developer help to dig into
+            them and fix them. I can think of myself as full-stacky if I want,
+            but I know that back-end stuff is where my rough edges are.
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <p>Things tend to end up a bit more like this.</p>
+        </div>
+        <div>
+          <blockquote class="twitter-tweet">
+            <p lang="en" dir="ltr">
+              “Fullstack” developer.
+              <a href="https://t.co/yfymQmJJgq">pic.twitter.com/yfymQmJJgq</a>
+            </p>
+            &mdash; Brian Holt (@holtbt)
+            <a
+              href="https://twitter.com/holtbt/status/977419276251430912?ref_src=twsrc%5Etfw"
+              >March 24, 2018</a
+            >
+          </blockquote>
+          <script
+            async
+            src="https://platform.twitter.com/widgets.js"
+            charset="utf-8"
+          ></script>
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <p>Or in my case, more like this:</p>
+        </div>
+        <div>
+          <img src="slides/Oops.089.jpeg" alt="" />
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div>
+          <p>
+            That's not to make fun of anybody. I mean, maybe a little, but it
+            draws a nice metaphor that is kinda perfect for this talk. We are
+            the whole horse! The whole dragon! But we've got rough edges. So
+            what.
+          </p>
+          <p>
+            It's cool to see the tech around our job evolve to the point that we
+            <em>can</em> reach our arms around the whole thing. It's worthy of
+            some concern when we feel like complication of web technology feels
+            like it's raising the barrier to entry. That happens sometimes and
+            it's not great. But it's also worthy of cheer when web technology
+            becomes simple enough that people can build things from start to
+            finish all by themselves. That's pretty cool.
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-halfs">
+        <div></div>
+        <div>
+          <p>
+            While we're being all productive and amazing, let's just remember
+            that <strong>doing a good job is everybodies job.</strong>
+          </p>
+          <ul class="colored-list">
+            <li>Good UX is everyone's job</li>
+            <li>Good performance is everyone's job</li>
+            <li>Good security is everyone's job</li>
+            <li>Good accessibility is everyone's job</li>
+            <li>
+              Doing right by the people that use your website is everyone's job
+            </li>
+          </ul>
+          <p>
+            Even if aren't writing the code that directly affects any of those
+            things, you care about them and fight for them to be handled well.
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-whole">
+        <img src="slides/Oops.091.jpeg" alt="" />
+        <p>
+          <a href="https://codepen.io/pro">CodePen PRO</a> (support your local
+          artisanal craft software products with money)
+        </p>
       </div>
     </main>
 

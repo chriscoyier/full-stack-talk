@@ -86,6 +86,11 @@ pre {
   border-radius: 5px;
   white-space: pre-wrap;
 }
+small {
+  font-family: "Comic Sans MS";
+  opacity: 0.8;
+  font-size: 70%;
+}
 .fade {
   opacity: 0.5;
 }
@@ -102,6 +107,15 @@ pre {
 
 .talk-header {
   padding: 200px 0;
+}
+.rotate {
+  animation: rotate 200s infinite linear;
+  display: inline-block;
+}
+@keyframes rotate {
+  100% {
+    transform: rotate(-360deg);
+  }
 }
 
 .by {
@@ -143,6 +157,30 @@ pre {
   background: url(images/check.svg) no-repeat top left;
   background-size: 40px;
   font-size: 125%;
+}
+.colored-list {
+  font-size: 125%;
+}
+.colored-list li:nth-child(1) {
+  color: #97f9ea;
+}
+.colored-list li:nth-child(2) {
+  color: #a5f46a;
+}
+.colored-list li:nth-child(3) {
+  color: #fff97e;
+}
+.colored-list li:nth-child(4) {
+  color: #ee6d57;
+}
+.colored-list li:nth-child(5) {
+  color: #de6aa5;
+}
+.colored-list li:nth-child(6) {
+  color: #43a2f8;
+}
+.colored-list li:nth-child(7) {
+  color: #69e2ce;
 }
 
 [class^="slide"] {
