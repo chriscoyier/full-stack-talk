@@ -99,12 +99,6 @@ small {
   max-width: 100%;
 }
 
-.callout {
-  background: var(--yel);
-  color: black;
-  padding: 1rem;
-}
-
 .talk-header {
   padding: 200px 0;
 }
